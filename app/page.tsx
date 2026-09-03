@@ -3,7 +3,7 @@
 import { ArrowDownRight, ArrowUpRight, Github, Linkedin, Menu, Sparkles, X } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-import "./logo.css";
+import styles from "./logo.module.css";
 
 const work = [
   { id: "01", tag: "IN PROGRESS", title: "RemitX AI", desc: "A calmer way to move money across borders, guided by intelligent workflows.", href: "https://remit-x-ai.vercel.app", type: "remit" },
@@ -20,7 +20,7 @@ function ProjectVisual({ type }: { type: string }) {
 export default function Home() {
   const [open, setOpen] = useState(false);
   return <main>
-    <header className="nav"><a className="wordmark" href="#top" aria-label="Divine Ifediorah home"><Image src="/divine.jpeg" alt="Divine Ifediorah" width={96} height={96} priority /><span>Divine Ifediorah</span></a><nav className={open ? "open" : ""}><a href="#work" onClick={() => setOpen(false)}>Work</a><a href="#about" onClick={() => setOpen(false)}>About</a><a href="#contact" onClick={() => setOpen(false)}>Contact</a></nav><button className="menu" onClick={() => setOpen(!open)} aria-label="Menu">{open ? <X/> : <Menu/>}</button></header>
+    <header className="nav"><a className={styles.wordmark} href="#top" aria-label="Divine Ifediorah home"><Image src="/divine.jpeg" alt="Divine Ifediorah" width={96} height={96} priority /><span>Divine Ifediorah</span></a><nav className={open ? "open" : ""}><a href="#work" onClick={() => setOpen(false)}>Work</a><a href="#about" onClick={() => setOpen(false)}>About</a><a href="#contact" onClick={() => setOpen(false)}>Contact</a></nav><button className="menu" onClick={() => setOpen(!open)} aria-label="Menu">{open ? <X/> : <Menu/>}</button></header>
 
     <section id="top" className="hero section"><div className="eyebrow"><Sparkles size={14}/> FULL STACK/BLOCKCHAIN ENGINEER</div><h1>Thoughtful digital<br/><em>experiences</em>, built<br/>to move people.</h1><div className="hero-bottom"><p>Based in Nigeria, working everywhere.<br/>I turn ambitious ideas into useful products.</p><a className="round-link" href="#work" aria-label="View selected work"><ArrowDownRight size={28}/></a></div><div className="hero-grid"/></section>
 
